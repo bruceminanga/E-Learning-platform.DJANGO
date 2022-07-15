@@ -9,6 +9,16 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+#putting secrete credentials to .env folder located in the same path where my settings.py is located
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD")
 
 from pathlib import Path
 
@@ -19,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-re4*o&8+3f2f+7r5w30%y=tsd5a-u6ks)y^2=-sdmex%m8%w#+'
+#SECRET_KEY = 'django-insecure-re4*o&8+3f2f+7r5w30%y=tsd5a-u6ks)y^2=-sdmex%m8%w#+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
