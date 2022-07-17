@@ -11,6 +11,8 @@ python-dotenv = "*"
 django-embed-video = "*"
 python-memcached = "*"
 django-memcache-status = "*"
+djangorestframework = "*"
+requests = "*"
 
 [dev-packages]
 pylint = "*"
